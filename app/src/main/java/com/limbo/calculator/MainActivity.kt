@@ -102,6 +102,26 @@ class MainActivity : AppCompatActivity() {
         buttonDivide.setOnClickListener(opListener)
         buttonMinus.setOnClickListener(opListener)
         buttonPlus.setOnClickListener(opListener)
+
+        // create a listener for a positive/negative button +/-
+        val numberSignListener = View.OnClickListener {
+            if(newNumber.text.isNotEmpty()) {
+                if(newNumber.text.toString() == "-") {
+                    newNumber.text.clear()
+                } else {
+                    var tempNumber: Double = newNumber.text.toString().toDouble()
+                    if (tempNumber > 0.0 || tempNumber < 0.0) {
+                        tempNumber *= -1.0
+                        newNumber.setText(tempNumber.toString())
+                    }
+                }
+            } else {
+                newNumber.setText("-")
+            }
+        }
+
+        positiveNegativeButton.setOnClickListener(numberSignListener)
+
     }
 
     // onSaveInstanceState with 2 params will only be called if onCreate method also has the same 2 params :( (spent 45+minutes stuck with this)

@@ -148,4 +148,11 @@
             android:id="@+id/buttonEquals" app:layout_constraintStart_toEndOf="@+id/buttonDot"
             android:layout_marginStart="8dp" app:layout_constraintBaseline_toBaselineOf="@+id/buttonDot"
             android:minWidth="48dp"/>
+    <Button
+            android:text="+/-"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/positiveNegativeButton" android:minWidth="48dp"
+            app:layout_constraintEnd_toStartOf="@+id/button0" android:layout_marginEnd="8dp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/button0"/>
 </android.support.constraint.ConstraintLayout>
